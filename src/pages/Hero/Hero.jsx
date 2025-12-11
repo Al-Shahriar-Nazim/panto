@@ -30,6 +30,18 @@ const Hero = () => {
         </div>
       </div>
       <div className="absolute inset-x-0 bottom-0 h-3/4 -mb-2 bg-gradient-to-t from-white via-transparent to-transparent shadow-sm"></div>
+      {/* hover button for displaying tooltip box */}
+      <div className="absolute bottom-40 left-24 group">
+        <button className="relative p-4 bg-white/25 border-white rounded-full border text-xl">
+          <div className="hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 p-2 rounded-lg bg-white/25 shadow-mg group-hover:flex space-x-2">
+            <div className="size-6 bg-red-700 border-white rounded-full"></div>
+            <div className="size-6 bg-green-700 border-white rounded-full"></div>
+            <div className="size-6 bg-blue-700 border-white rounded-full"></div>
+            {/* tooltip arrow */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 w-0 h-0 border-l-8 border-left-transfarent border-right-8 border-right-transfarent border-t-8 border-t-white/35"></div>
+          </div>
+        </button>
+      </div>
     </section>
   );
 };

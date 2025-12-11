@@ -22,7 +22,7 @@ const Navbar = () => {
   );
   return (
     <header
-      className={`fixed left-0 right-0 top-0 text-white transition duration-300 ease-in-out`}
+      className={`fixed left-0 right-0 top-0 text-white transition duration-300 ease-in-out z-50`}
     >
       <div className="container mx-auto">
         <div className="navbar ">
