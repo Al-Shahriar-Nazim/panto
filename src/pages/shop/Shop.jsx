@@ -1,9 +1,16 @@
 import React from "react";
+import bannerImg from "../../assets/banner.png";
 
 const Shop = () => {
   return (
     <div>
-      <h3>This is shop section</h3>
+      <section className="min-h-screen">
+        {/* Banner */}
+        <div
+          className="h-screen w-full "
+          style={{ backgroundImage: `url(${bannerImg})` }}
+        ></div>
+      </section>
     </div>
   );
 };

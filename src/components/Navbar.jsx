@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import "./navbar.css";
 import { FaShoppingBag } from "react-icons/fa";
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const links = (
     <>
       <NavLink to="/" className="ml-5">
@@ -20,9 +21,25 @@ const Navbar = () => {
       </NavLink>
     </>
   );
+  // when scrolled ,apply bg color to navbar
+  useEffect(() => {
+    const handleScrolled = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScrolled);
+    return () => {
+      window.addEventListener("scroll", handleScrolled);
+    };
+  }, []);
   return (
     <header
-      className={`fixed left-0 right-0 top-0 text-white transition duration-300 ease-in-out z-50`}
+      className={`fixed left-0 right-0 top-0 transition duration-300 ease-in-out z-50 ${
+        isScrolled ? "bg-white shadow-md" : "bg-transparent text-white"
+      }`}
     >
       <div className="container mx-auto">
         <div className="navbar ">
